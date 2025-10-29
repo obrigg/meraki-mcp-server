@@ -33,7 +33,9 @@ api_key = os.getenv("MERAKI_KEY")
 # Create an HTTP client for Meraki API
 client = httpx.AsyncClient(
     base_url="https://api.meraki.com/api/v1",
-    headers={"Authorization": f"Bearer {api_key}"}
+    headers={"Authorization": f"Bearer {api_key}",
+        "User-Agent": "Meraki-MCP-Server/1.0 kiskander"
+        }
 )
 
 # ---- Validation Patching ----
